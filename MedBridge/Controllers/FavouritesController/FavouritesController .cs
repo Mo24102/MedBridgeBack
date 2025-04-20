@@ -19,13 +19,13 @@ namespace MedBridge.Controllers
             _context = context;
         }
 
-        // استخراج UserId
+        
         private string GetUserId()
         {
             return User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
         }
 
-        // ✅ إضافة منتج للمفضلة
+        
         [HttpPost("add")]
         public async Task<IActionResult> AddToFavourites([FromForm] AddToFavouritesDto model)
         {
@@ -62,7 +62,7 @@ namespace MedBridge.Controllers
             }
         }
 
-        // ❌ حذف من المفضلة
+       
         [HttpDelete("remove/{productId}")]
         public async Task<IActionResult> RemoveFromFavourites(int productId)
         {
@@ -89,7 +89,6 @@ namespace MedBridge.Controllers
             }
         }
 
-        // 📄 عرض كل المنتجات في المفضلة
         [HttpGet("list")]
         public async Task<IActionResult> GetUserFavourites()
         {
