@@ -6,11 +6,10 @@ namespace MedBridge.Models
     {
         public int Id { get; set; }
 
-        public string UserId { get; set; }    // المستخدم اللي عمل الفيفوريت
+        public string UserId { get; set; }    
 
-        public int ProductId { get; set; }    // المنتج اللي عمله Favorite
+        public int ProductId { get; set; }    
 
-        // العلاقات
         public virtual ProductModel Product { get; set; }
     }
 }
